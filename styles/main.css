@@ -1,0 +1,24 @@
+.personalData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.contractionType {
+  padding-bottom: 2rem;
+}
+
+.select1 {
+  margin-bottom: 2rem;
+}
+
+.poll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btnSubmit {
+  padding: 2rem;
+}
