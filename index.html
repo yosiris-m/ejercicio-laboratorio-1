@@ -10,14 +10,15 @@
 <body>
  <h1>Formulario Información Alta Telefónica</h1>
     <main>
-        <form action="submit" class=".js-form" id="form"> 
+        <form class=".js-form" id="form" action="send"> 
              <fieldset class="personalData">
                  <legend>Datos personales</legend>
                  <label for="name">Nombre:<input type="text" maxlength="30" class=".js-form_input"></label>
                  <label for="lastname">Apellidos: <input type="text" name="lastName" maxlength="60" class=".js-form_input"></label>
                  <label for="direction">Dirección: <input type="text" name="direction"maxlength="60" class=".js-form_input"></label>
-                 <label for="code">Código Postal: <input type="text" name="code" class=".js-form_input"></label>
-                 <label for="location">Localidad: <input type="text" name="location" class=".js-form_input"></label>
+                 <label for="code">Código Postal: <input type="number" value="code" name="code" id="inputText"></label>
+                 <p id="valueMessage"></p>
+                 <label for="location">Localidad: <input type="text" name="location"></label>
                 </fieldset>
                 <fieldset class="contractionType"> 
                     <legend>Tipo de contratación</legend>
@@ -50,12 +51,13 @@
                     <fieldset class="personalData">
                         <legend>Datos personales</legend>
                         <label for="name">País:
-                            <input type="text" name="ES" value="ES" placeholder="ES" maxlength="2" pattern="[ES]{2}">
+                            <input type="text" name="ES" value="ES" placeholder="ES" maxlength="2" pattern="[ES]{1,2}" disabled>
                             (sólo válido ES)</label>
-                        <label for="lastName">Control IBAN<input type="text" name="lastName" placeholder="XX" maxlength="2">(dos dígitos)</label>
+                          
+                        <label for="lastName">Control IBAN<input type="number" name="lastName" placeholder="XX" maxlength="2"  required>(dos dígitos)</label>
                         <label for="direction">Entidad: <input type="number" name="direction" placeholder="XXXX" maxlength="4">(cuatro digitos)</label>
-                        <label for="code">Sucursal: <input type="number" name="sucursal" placeholder="XXXX" required maxlength="4">(cuatro dígitos)</label>
-                        <label for="dc">DC: <input type="number" name="dc" placeholder="XX" maxlength="2">(dos dígitos)</label>
+                        <label for="code">Sucursal: <input type="number" name="sucursal" placeholder="XXXX" maxlength="4">(cuatro dígitos)</label>
+                        <label for="dc">DC: <input type="number" name="dc" placeholder="XX"maxlength="2">(dos dígitos)</label>
                         <label for="cuenta">Cuenta: <input type="number" name="cuenta" placeholder="XXXXXXXXXX" maxlength="10">(diez dígitos)</label>
                     </fieldset>
 
@@ -66,9 +68,9 @@
                         <label for="new"><input type="checkbox" >A través de la Internet</label>
                         <label for="new"><input type="checkbox" >Otros</label>
                         <div class="poll" >
-                            <label>Fecha de la Encuesta:<input type="date"></label>
+                            <label>Fecha de la Encuesta:</label><input type="date" name="date" min="01/01/2019">
                             <div>
-                            <input class="wrapper" type="range" list="tickmarks" min="1" max="4" >
+                            <input class="wrapper" type="range" list="tickmarks" min="1" max="4"  >
 
                              <datalist id="tickmarks">
                                 <option value="0" label="0%">
@@ -83,14 +85,12 @@
                 </fieldset>
 
                  <div  class="btnSubmit">
-                     <input type="submit" class="btnSend" onclick="submit()"/>
-                     <input type="button" value="Borrar Datos" onclick="reset()">
+                     <input type="submit" value="Enviar Formulario"  class="btnSend" onsubmit="handleSubmit()"/>
+                     <input type="reset" value="Borrar Datos" onclick="onClickHandleDelete()">
                  </div>   
                      <input type="button" value="Mostrar Valoración">
                      <input type="button" value="Mostrar Cuenta">
                      <input type="button" value="Mostrar Día Semana">
-                  
-              
                 
             </form>
        

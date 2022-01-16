@@ -22,3 +22,11 @@
 .btnSubmit {
   padding: 2rem;
 }
+
+.colorG {
+  color: green;
+}
+
+.colorR {
+  color: rgb(224, 17, 17);
+}
