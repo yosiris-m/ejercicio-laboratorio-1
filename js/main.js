@@ -6,17 +6,17 @@ function handleSubmit(ev) {
   ev.preventDefault();
   onClickHandleDelete();
 
-  var validForm = form;
-  var data = validForm[0];
-  if (data.value === "send") {
-    //revisar no se envian los datos al hacer submit entra por el else
-    alert("Su formulario ha sido enviado");
-    validForm.submit();
-    return true;
-  } else {
-    alert("No se a podido envíar el formulario");
-    return false;
-  }
+  // var validForm = form;
+  // var data = validForm[0];
+  // if (data.value === "send") {
+  //   //revisar no se envian los datos al hacer submit entra por el else
+  //   alert("Su formulario ha sido enviado");
+  //   validForm.submit();
+  //   return true;
+  // } else {
+  //   alert("No se a podido envíar el formulario");
+  //   return false;
+  // }
 }
 
 form.addEventListener("submit", handleSubmit);

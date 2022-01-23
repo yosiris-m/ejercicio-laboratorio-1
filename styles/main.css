@@ -30,3 +30,52 @@
 .colorR {
   color: rgb(224, 17, 17);
 }
+
+/* 
+.star {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  width: 20rem;
+  justify-content: space-around;
+  direction: rtl; /* right to left */
+/*unicode-bidi: bidi-override;  bidi de bidireccional 
+}*/
+
+/*.start0 {
+  display: none;
+}
+
+.starColor {
+  color: rgb(75, 74, 74);
+  font-size: 1.5rem;
+}
+
+.starColor label:hover,
+.starColor label~ starColor {
+  color: orange;
+}
+
+.start0[type="radio"]:checked ~ i {
+  color: orange; */
+
+/* .star {
+  background-color: initial;
+  border: 0;
+}
+.star button {
+  cursor: pointer;
+  color: #ffa400;
+}
+button:nth-child(1) ~ button {
+  color: #ffa400;
+}
+button:nth-child(2) ~ button {
+  color: #ffa400;
+}
+button:nth-child(3) ~ button {
+  color: #ffa400;
+}
+button:nth-child(4) ~ button {
+  color: #ffa400;
+} */

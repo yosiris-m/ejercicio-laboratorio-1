@@ -7,6 +7,7 @@
     <title>TelephoneForm</title>
 </head>
 <link rel="stylesheet" href="./styles/main.css">
+<script src="https://kit.fontawesome.com/a22a8f4330.js" crossorigin="anonymous"></script>
 <body>
  <h1>Formulario Información Alta Telefónica</h1>
     <main>
@@ -54,7 +55,7 @@
                             <input type="text" name="ES" value="ES" placeholder="ES" maxlength="2" pattern="[ES]{1,2}" disabled>
                             (sólo válido ES)</label>
                           
-                        <label for="lastName">Control IBAN<input type="number" name="lastName" placeholder="XX" maxlength="2"  required>(dos dígitos)</label>
+                        <label for="lastName">Control IBAN<input type="number" name="lastName" placeholder="XX" maxlength="2">(dos dígitos)</label>
                         <label for="direction">Entidad: <input type="number" name="direction" placeholder="XXXX" maxlength="4">(cuatro digitos)</label>
                         <label for="code">Sucursal: <input type="number" name="sucursal" placeholder="XXXX" maxlength="4">(cuatro dígitos)</label>
                         <label for="dc">DC: <input type="number" name="dc" placeholder="XX"maxlength="2">(dos dígitos)</label>
@@ -69,16 +70,16 @@
                         <label for="new"><input type="checkbox" >Otros</label>
                         <div class="poll" >
                             <label>Fecha de la Encuesta:</label><input type="date" name="date" min="01/01/2019">
-                            <div>
-                            <input class="wrapper" type="range" list="tickmarks" min="1" max="4"  >
+                            <div class="star">   
+                              <input id="radio1" type="radio" class="start0" value="4">
+                              <label for="radio1"><i class="fas fa-star starColor"></i></label>
+                              <input id="radio2" type="radio" class="start0" value="3">
+                              <label for="radio2"> <i class="fas fa-star starColor"></i></label>
+                              <input id="radio3" type="radio" class="start0" value="2">
+                              <label for="radio3"> <i class="fas fa-star starColor"></i></label>
+                              <input id="radio4" type="radio" class="start0" value="1">
+                              <label for="radio4"> <i class="fas fa-star starColor"></i></label>
 
-                             <datalist id="tickmarks">
-                                <option value="0" label="0%">
-                                <option value="1">
-                                <option value="2">
-                                <option value="3">
-                                <option value="4">
-                            </datalist>
                         </div>
                             <span>valoración[1-4]</span>
                         </div>     

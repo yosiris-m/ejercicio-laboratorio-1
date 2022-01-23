@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "postcss-cli": "^9.1.0",
+    "postcss-nesting": "^10.1.2"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
