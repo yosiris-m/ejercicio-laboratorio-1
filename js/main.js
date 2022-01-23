@@ -125,10 +125,27 @@ function inputNumberOnChange(ev) {
 }
 
 inputText.addEventListener("keyup", inputNumberOnChange);
-//
-//
-//
-//
+
+const ratingValueStars = [...document.getElementsByClassName("result")];
+
+function valueStar(value) {
+  const active = "result fas fa-star";
+  const inactive = "result far fa-star";
+  const starsValueLength = value.length;
+  let n;
+  value.map((star) => {
+    star.onclick = () => {
+      n = value.indexOf(star);
+      if (star.className === inactive) {
+        for (n; n >= 0; --n) value[n].className = active;
+      }
+      if (star.className === active) {
+        for (n; n <= starsValueLength; ++n) value[n].className = inactive;
+      }
+    };
+  });
+}
+valueStar(ratingValueStars);
 
 //test
 function testPostalCodeIsEmpty() {
