@@ -70,11 +70,11 @@
                         <label for="new"><input type="checkbox" >Otros</label>
                         <div class="poll" >
                             <label>Fecha de la Encuesta:</label><input type="date" name="date" min="01/01/2019">
-                        <div class="star">
-                           <i class="result far fa-star"></i>
-                           <i class="result far fa-star"></i>
-                           <i class="result far fa-star"></i>
-                           <i class="result far fa-star"></i>
+                        <div class="star" onclick="valueStar(event)">
+                           <i class=" far fa-star"></i>
+                           <i class=" far fa-star"></i>
+                           <i class=" far fa-star"></i>
+                           <i class=" far fa-star"></i>
                         </div>
                   
                             <span>valoración[1-4]</span>
@@ -85,7 +85,7 @@
                      <input type="submit" value="Enviar Formulario"  class="btnSend" onsubmit="handleSubmit()"/>
                      <input type="reset" value="Borrar Datos" onclick="onClickHandleDelete()">
                  </div>   
-                     <input type="button" value="Mostrar Valoración">
+                     <input type="button" value="Mostrar Valoración" onclick="reviewStars()">
                      <input type="button" value="Mostrar Cuenta">
                      <input type="button" value="Mostrar Día Semana">
                 

@@ -124,28 +124,31 @@ function inputNumberOnChange(ev) {
   }
 }
 
-inputText.addEventListener("keyup", inputNumberOnChange);
+const stars = [...document.querySelectorAll(".fa-star")];
 
-const ratingValueStars = [...document.getElementsByClassName("result")];
+let review;
+function valueStar(ev) {
+  const index = stars.indexOf(ev.target);
+  review = index + 1;
+  for (let i = 0; i < stars.length; i++) {
+    const element = stars[i];
 
-function valueStar(value) {
-  const active = "result fas fa-star";
-  const inactive = "result far fa-star";
-  const starsValueLength = value.length;
-  let n;
-  value.map((star) => {
-    star.onclick = () => {
-      n = value.indexOf(star);
-      if (star.className === inactive) {
-        for (n; n >= 0; --n) value[n].className = active;
-      }
-      if (star.className === active) {
-        for (n; n <= starsValueLength; ++n) value[n].className = inactive;
-      }
-    };
-  });
+    if (i <= index) {
+      element.classList.add("starActive");
+      element.classList.add("fas");
+      element.classList.remove("far");
+    } else {
+      element.classList.remove("starActive");
+      element.classList.remove("fas");
+      element.classList.add("far");
+    }
+  }
 }
-valueStar(ratingValueStars);
+
+function reviewStars() {
+  console.log("clicvalooo");
+  alert(`Tú valoración a sido ${review} de 4`);
+}
 
 //test
 function testPostalCodeIsEmpty() {

@@ -58,7 +58,6 @@
   width: 180px;
 } */
 
-.result {
-  cursor: pointer;
+.starActive {
   color: #e9b23cb2;
 }
