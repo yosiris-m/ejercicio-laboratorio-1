@@ -4,6 +4,7 @@
     "postcss-nesting": "^10.1.2"
   },
   "dependencies": {
+    "moment": "^2.29.1",
     "node-sass": "^7.0.1"
   }
 }

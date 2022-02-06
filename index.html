@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ESS">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
                  <label for="name">Nombre:<input type="text" maxlength="30" class=".js-form_input"></label>
                  <label for="lastname">Apellidos: <input type="text" name="lastName" maxlength="60" class=".js-form_input"></label>
                  <label for="direction">Dirección: <input type="text" name="direction"maxlength="60" class=".js-form_input"></label>
-                 <label for="code">Código Postal: <input type="number" value="code" name="code" id="inputText"></label>
+                 <label for="code">Código Postal: <input type="number" name="code" id="inputText"></label>
                  <p id="valueMessage"></p>
                  <label for="location">Localidad: <input type="text" name="location"></label>
                 </fieldset>
@@ -28,7 +28,7 @@
                     <label for="change"><input type="radio" value="change" name="contraction">Cambio de contrato</label>
             
                     <legend>Elija una compañia actual:</legend>
-                    <select name="" id="" class="select1">
+                    <select class="select1">
                         <option value="">Elija una opción</option>
                         <option value="Movistar">Movistar</option>
                         <option value="Orange">Orange</option>
@@ -39,27 +39,29 @@
 
                     </select>
                     <span>En caso de portabilidad elija una compañia:</span>
-                    <select name="" id="">
-                        <option value="">Elija una opción</option>
-                        <option value="">Movistar</option>
-                        <option value="">Orange</option>
-                        <option value="">Vodafone</option>
-                        <option value="">Yoigo</option>
+                    <select >
+                        <option >Elija una opción</option>
+                        <option >Movistar</option>
+                        <option >Orange</option>
+                        <option >Vodafone</option>
+                        <option >Yoigo</option>
 
                     </select>
                 </fieldset>   
 
                     <fieldset class="personalData">
                         <legend>Datos personales</legend>
-                        <label for="name">País:
-                            <input type="text" name="ES" value="ES" placeholder="ES" maxlength="2" pattern="[ES]{1,2}" disabled>
+                      
+                        <label for="es">País:
+                            <input type="text"  value="ES" id="es" placeholder="ES" maxlength="2" pattern="[ES]{1,2}" disabled>
                             (sólo válido ES)</label>
                           
-                        <label for="lastName">Control IBAN<input type="number" name="lastName" placeholder="XX" maxlength="2">(dos dígitos)</label>
-                        <label for="direction">Entidad: <input type="number" name="direction" placeholder="XXXX" maxlength="4">(cuatro digitos)</label>
-                        <label for="code">Sucursal: <input type="number" name="sucursal" placeholder="XXXX" maxlength="4">(cuatro dígitos)</label>
-                        <label for="dc">DC: <input type="number" name="dc" placeholder="XX"maxlength="2">(dos dígitos)</label>
-                        <label for="cuenta">Cuenta: <input type="number" name="cuenta" placeholder="XXXXXXXXXX" maxlength="10">(diez dígitos)</label>
+                        <label for="bankName">Control IBAN<input type="number" id="bankName" placeholder="XX" min="0" max="99">(dos dígitos)</label>
+                        <label for="direction">Entidad: <input type="number" name="direction" id="direction" placeholder="XXXX" maxlength="4">(cuatro digitos)</label>
+                        <label for="codeBank">Sucursal: <input type="number" name="codeBank" id="codeBank" placeholder="XXXX" maxlength="4">(cuatro dígitos)</label>
+                        <label for="dc">DC: <input type="number" name="dc" id="dc" placeholder="XX"maxlength="2">(dos dígitos)</label>
+                        <label for="numberBank">Cuenta: <input type="number" name="numberBank" id="numberBank" placeholder="XXXXXXXXXX" maxlength="10">(diez dígitos)</label>
+                    
                     </fieldset>
 
                      <fieldset  class="poll"> 
@@ -69,7 +71,7 @@
                         <label for="new"><input type="checkbox" >A través de la Internet</label>
                         <label for="new"><input type="checkbox" >Otros</label>
                         <div class="poll" >
-                            <label>Fecha de la Encuesta:</label><input type="date" name="date" min="01/01/2019">
+    
                         <div class="star" onclick="valueStar(event)">
                            <i class=" far fa-star"></i>
                            <i class=" far fa-star"></i>
@@ -77,21 +79,24 @@
                            <i class=" far fa-star"></i>
                         </div>
                   
-                            <span>valoración[1-4]</span>
+                            <span>Danos tu valoración[1-5]</span>
                         </div>     
+                        <label for="date">Fecha de la Encuesta:</label><input type="date" name="date" id="date" min="01/01/2019"/>
                 </fieldset>
 
                  <div  class="btnSubmit">
                      <input type="submit" value="Enviar Formulario"  class="btnSend" onsubmit="handleSubmit()"/>
                      <input type="reset" value="Borrar Datos" onclick="onClickHandleDelete()">
                  </div>   
-                     <input type="button" value="Mostrar Valoración" onclick="reviewStars()">
-                     <input type="button" value="Mostrar Cuenta">
-                     <input type="button" value="Mostrar Día Semana">
+                     <input type="button" value="Mostrar Valoración" onclick="reviewStars()"/>
+                     <input type="button" value="Mostrar Cuenta" onclick="showBank()"/>
+                     <input type="button" value="Mostrar Día Semana" onclick="showDate()"/>
                 
             </form>
        
     </main>
-<script src="./js/main.js"></script>
+   
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
