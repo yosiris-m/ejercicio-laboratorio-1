@@ -62,7 +62,7 @@ inputText.addEventListener("keyup", inputNumberOnChange);
 
 const stars = [...document.querySelectorAll(".fa-star")];
 
-let review;
+let review = 0;
 function valueStar(ev) {
   const index = stars.indexOf(ev.target);
   review = index + 1;
@@ -82,7 +82,7 @@ function valueStar(ev) {
 }
 
 function reviewStars() {
-  alert(`Tú valoración a sido ${review} de 5`);
+  alert(`Has valorado con ${review} puntos`);
 }
 
 function showBank() {
