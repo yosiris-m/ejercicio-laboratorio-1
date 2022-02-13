@@ -11,7 +11,7 @@ form.addEventListener("submit", handleSubmit);
 
 function onClickHandleDelete() {
   document.querySelector("#form").reset();
-  valueSpan.innerText = "";
+  postalValidation.innerText = "";
   changeReview(0);
 }
 
@@ -41,20 +41,20 @@ function validPostalCode(postalCode) {
 }
 
 const inputText = document.getElementById("inputText");
-const valueSpan = document.getElementById("valueMessage");
+const postalValidation = document.getElementById("postalValidation");
 
 function inputNumberOnChange(ev) {
   const inputV = ev.target.value;
   const valid = validPostalCode(inputV);
 
-  valueSpan.innerText = valid.mensaje;
+  postalValidation.innerText = valid.mensaje;
 
-  valueSpan.classList.remove("colorG");
-  valueSpan.classList.remove("colorR");
+  postalValidation.classList.remove("colorG");
+  postalValidation.classList.remove("colorR");
   if (valid.isValid) {
-    valueSpan.classList.add("colorG");
+    postalValidation.classList.add("colorG");
   } else {
-    valueSpan.classList.add("colorR");
+    postalValidation.classList.add("colorR");
   }
 }
 
