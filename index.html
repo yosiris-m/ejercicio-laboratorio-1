@@ -1,141 +1,256 @@
 <!DOCTYPE html>
 <html lang="ESS">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TelephoneForm</title>
-</head>
-<link rel="stylesheet" href="./styles/main.css">
-<script src="https://kit.fontawesome.com/a22a8f4330.js" crossorigin="anonymous"></script>
-<body>
-    <header> 
-        <h1 class="title">Formulario Información Alta Telefónica </h1>
-     </header>
+  </head>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <script
+    src="https://kit.fontawesome.com/a22a8f4330.js"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <header>
+      <h1 class="title">Formulario Información Alta Telefónica</h1>
+    </header>
 
     <main>
-        <form class=".js-form form" id="form" action="send"> 
-             <fieldset >
-                 <legend class="legend">Datos Personales <i class="fas fa-user"></i></legend>
-                 <section class="personalData">
-                    <label for="name">Nombre:</label>
-                        <input type="text" maxlength="30" name="name" class=".js-form_input inputData">
-                    <label for="lastname">Apellidos: </label> 
-                        <input type="text" name="lastName" maxlength="60" class=".js-form_input inputData">
-                </section>
-                <section class="personalDirection">
-                    <label for="direction">Dirección:</label> <input type="text" name="direction" maxlength="60" class=".js-form_input inputData">
-                    <label for="location">Localidad: </label><input type="text" name="location" class="inputData">
-                  </section>   
-                    <section class="postalcode"> 
-                        <label for="code">Código Postal:</label> <input type="number" name="code" id="inputText" class="inputData">
-                        <p id="valueMessage"></p> 
-                    </section>
-                
-                 
-                </fieldset>
+      <form class=".js-form form" id="form" action="send">
+        <fieldset>
+          <legend class="legend">
+            Datos Personales <i class="fas fa-user"></i>
+          </legend>
+          <section class="personalData">
+            <label for="name">Nombre:</label>
+            <input
+              type="text"
+              maxlength="30"
+              name="name"
+              class=".js-form_input inputData"
+            />
+            <label for="lastname">Apellidos: </label>
+            <input
+              type="text"
+              name="lastName"
+              maxlength="60"
+              class=".js-form_input inputData"
+            />
+          </section>
+          <section class="personalDirection">
+            <label for="direction">Dirección:</label>
+            <input
+              type="text"
+              name="direction"
+              maxlength="60"
+              class=".js-form_input inputData"
+            />
+            <label for="location">Localidad: </label
+            ><input type="text" name="location" class="inputData" />
+          </section>
+          <section class="postalcode">
+            <label for="code">Código Postal:</label>
+            <input type="number" name="code" id="inputText" class="inputData" />
+            <p id="valueMessage"></p>
+          </section>
+        </fieldset>
 
+        <fieldset class="type">
+          <legend class="legend">
+            Tipo de Contratación <i class="fas fa-phone-alt"></i>
+          </legend>
+          <label for="new"
+            ><input type="radio" value="new" name="contraction" checked />Nueva
+            contratación</label
+          >
+          <label for="portability"
+            ><input
+              type="radio"
+              value="portability"
+              name="contraction"
+            />Portabilidad</label
+          >
+          <label for="change"
+            ><input type="radio" value="change" name="contraction" />Cambio de
+            contrato</label
+          >
+          <section class="hiringType">
+            <span>Elija la compañia actual:</span>
+            <select class="select1">
+              <option value="">Elija una opción</option>
+              <option value="Movistar">Movistar</option>
+              <option value="Orange">Orange</option>
+              <option value="Vodafone">Vodafone</option>
+              <option value="Yoigo">Yoigo</option>
+              <option value="No Tengo Ninguna">
+                No Tengo Ninguna Compañía
+              </option>
+            </select>
 
-                <fieldset class="type"> 
-                    <legend class="legend">Tipo de Contratación <i class="fas fa-phone-alt"></i></legend>
-                    <label for="new"><input type="radio" value="new" name="contraction" checked >Nueva contratación</label>
-                    <label for="portability"><input type="radio"  value="portability" name="contraction">Portabilidad</label>
-                    <label for="change"><input type="radio" value="change" name="contraction">Cambio de contrato</label>
-                 <section class="hiringType">
-                    <span>Elija la compañia actual:</span>
-                    <select class="select1">
-                        <option value="">Elija una opción</option>
-                        <option value="Movistar">Movistar</option>
-                        <option value="Orange">Orange</option>
-                        <option value="Vodafone">Vodafone</option>
-                        <option value="Yoigo">Yoigo</option>
-                        <option value="No Tengo Ninguna">No Tengo Ninguna
-                            Compañía</option>
+            <span>En caso de portabilidad elija una compañia:</span>
+            <select class="select1">
+              <option>Elija una opción</option>
+              <option>Movistar</option>
+              <option>Orange</option>
+              <option>Vodafone</option>
+              <option>Yoigo</option>
+            </select>
+          </section>
+        </fieldset>
 
-                    </select>
-                    
-                    <span>En caso de portabilidad elija una compañia:</span>
-                    <select class="select1" >
-                        <option >Elija una opción</option>
-                        <option >Movistar</option>
-                        <option >Orange</option>
-                        <option >Vodafone</option>
-                        <option >Yoigo</option>
+        <fieldset class="dataBank">
+          <legend class="legend">
+            Datos Bancarios <i class="fas fa-money-check-alt"></i>
+          </legend>
 
-                    </select>
-                </section>
-                </fieldset>   
+          <label for="es"
+            >País:
+            <input
+              type="text"
+              name="country"
+              id="country"
+              value="ES"
+              readonly
+            />
+            <span class="digit"> (sólo válido ES)</span>
+          </label>
 
-                    <fieldset class="dataBank">
-                        <legend class="legend">Datos Bancarios <i class="fas fa-money-check-alt"></i></legend>
-                      
-                        <label for="es">País:
-                            <input type="text" name="country" id="country" value="ES" readonly>
-                            <span class="digit"> (sólo válido ES)</span>
-                         </label>
-                          
-                        <label for="bankName" >Control IBAN<input type="text" name="bankName" id="bankName" placeholder="XX" maxlength="2" onkeyup="removeNoNumbers(event)">
-                            <span class="digit">(dos dígitos)</span></label>
-                        <label for="direction">Entidad:
-                          <input type="text" name="direction" id="direction" placeholder="XXXX" maxlength="4" onkeyup="removeNoNumbers(event)">
-                           <span class="digit">(cuatro digitos) </span>   
-                            </label>
-                        <label for="codeBank">Sucursal:
-                         <input type="text" name="codeBank" id="codeBank" placeholder="XXXX" maxlength="4" onkeyup="removeNoNumbers(event)">
-                         <span class="digit"> (cuatro dígitos)</span>
-                        </label>
-                        <label for="dc">DC: 
-                        <input type="text" name="dc" id="dc" placeholder="XX" maxlength="2" onkeyup="removeNoNumbers(event)">
-                        <span class="digit">(dos dígitos)</span>
-                       </label>
-                        <label for="numberBank">Cuenta: 
-                         <input type="text" name="numberBank" id="numberBank" placeholder="XXXXXXXXXX" maxlength="10" onkeyup="removeNoNumbers(event)">
-                        <span class="digit">(diez dígitos)</span>
-                        </label>
-                    
-                    </fieldset>
+          <label for="bankName"
+            >Control IBAN<input
+              type="text"
+              name="bankName"
+              id="bankName"
+              placeholder="XX"
+              maxlength="2"
+              onkeyup="removeNoNumbers(event)"
+            />
+            <span class="digit">(dos dígitos)</span></label
+          >
+          <label for="direction"
+            >Entidad:
+            <input
+              type="text"
+              name="direction"
+              id="direction"
+              placeholder="XXXX"
+              maxlength="4"
+              onkeyup="removeNoNumbers(event)"
+            />
+            <span class="digit">(cuatro digitos) </span>
+          </label>
+          <label for="codeBank"
+            >Sucursal:
+            <input
+              type="text"
+              name="codeBank"
+              id="codeBank"
+              placeholder="XXXX"
+              maxlength="4"
+              onkeyup="removeNoNumbers(event)"
+            />
+            <span class="digit"> (cuatro dígitos)</span>
+          </label>
+          <label for="dc"
+            >DC:
+            <input
+              type="text"
+              name="dc"
+              id="dc"
+              placeholder="XX"
+              maxlength="2"
+              onkeyup="removeNoNumbers(event)"
+            />
+            <span class="digit">(dos dígitos)</span>
+          </label>
+          <label for="numberBank"
+            >Cuenta:
+            <input
+              type="text"
+              name="numberBank"
+              id="numberBank"
+              placeholder="XXXXXXXXXX"
+              maxlength="10"
+              onkeyup="removeNoNumbers(event)"
+            />
+            <span class="digit">(diez dígitos)</span>
+          </label>
+        </fieldset>
 
-                     <fieldset  class="poll"> 
-                        <legend class="legend">Datos Estadisticos - ¿Cómo nos conoció?  <i class="fas fa-headset"></i></legend>
-                        <label for="new"><input type="checkbox" >A través de la TV</label>
-                        <label for="new"><input type="checkbox" >A través de la radio</label>
-                        <label for="new"><input type="checkbox" >A través de la Internet</label>
-                        <label for="new"><input type="checkbox" >Otros</label>
-                        
-                        <label for="date">Fecha de la Encuesta:<input type="date" name="date" id="date" min="2019-01-01" value="2019-01-01"/>
-                            </label>
-                       
-                        <div class="pollStar" >
-                        <div class="star" onclick="valueStar(event)">
-                           <i class=" far fa-star"></i>
-                           <i class=" far fa-star"></i>
-                           <i class=" far fa-star"></i>
-                           <i class=" far fa-star"></i>
-                           <i class=" far fa-star"></i>
-                        </div>
-                       <span class="span">Danos tu valoración[1-5]</span>
-                           
-                        </div>     
-                        
-                       
-                        
-                </fieldset>
-                   <section class="bottons"> 
-                       <div class="otherBotton"> 
-                           <input type="button" value="Mostrar Valoración" class="bottonShow" onclick="reviewStars()"/>
-                     <input type="button" value="Mostrar Cuenta" class="bottonShow"  onclick="showBank()"/>
-                     <input type="button" value="Mostrar Día Semana" class="bottonShow"  onclick="showDate()"/> </div>
-                    
-                <div  class="btnSubmit">
-                     <input type="submit" value="Enviar Datos"  class="btnSend" onsubmit="handleSubmit()"/>
-                     <input type="reset" value="Borrar Datos" class="delete" onclick="onClickHandleDelete()">
-                 </div>   </section>
-                 
-            </form>
-       
+        <fieldset class="poll">
+          <legend class="legend">
+            Datos Estadisticos - ¿Cómo nos conoció?
+            <i class="fas fa-headset"></i>
+          </legend>
+          <label for="new"><input type="checkbox" />A través de la TV</label>
+          <label for="new"><input type="checkbox" />A través de la radio</label>
+          <label for="new"
+            ><input type="checkbox" />A través de la Internet</label
+          >
+          <label for="new"><input type="checkbox" />Otros</label>
+
+          <label for="date"
+            >Fecha de la Encuesta:<input
+              type="date"
+              name="date"
+              id="date"
+              min="2019-01-01"
+              value="2019-01-01"
+            />
+          </label>
+
+          <div class="pollStar">
+            <div class="star" onclick="valueStar(event)">
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <span class="span">Danos tu valoración[1-5]</span>
+          </div>
+        </fieldset>
+        <section class="bottons">
+          <div class="otherBotton">
+            <input
+              type="button"
+              value="Mostrar Valoración"
+              class="bottonShow"
+              onclick="reviewStars()"
+            />
+            <input
+              type="button"
+              value="Mostrar Cuenta"
+              class="bottonShow"
+              onclick="showBank()"
+            />
+            <input
+              type="button"
+              value="Mostrar Día Semana"
+              class="bottonShow"
+              onclick="showDate()"
+            />
+          </div>
+
+          <div class="btnSubmit">
+            <input
+              type="submit"
+              value="Enviar Datos"
+              class="btnSend"
+              onsubmit="handleSubmit()"
+            />
+            <input
+              type="reset"
+              value="Borrar Datos"
+              class="delete"
+              onclick="onClickHandleDelete()"
+            />
+          </div>
+        </section>
+      </form>
     </main>
-   
+
     <script src="./js/data.js"></script>
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>
