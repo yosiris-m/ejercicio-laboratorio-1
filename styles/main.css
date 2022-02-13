@@ -8,10 +8,21 @@ body {
   align-items: center;
   margin: 2rem 0;
   color: rgb(241, 106, 16);
+  font-size: 3rem;
 }
+
+fieldset {
+  border: 0.2rem solid rgb(221, 135, 77);
+  border-radius: 1rem;
+  margin: 3rem 1rem;
+  padding: 1rem;
+}
+
 .legend {
   font-size: 1.8rem;
   color: rgb(221, 135, 77);
+  background-color: rgb(240, 236, 231);
+  padding: 0 1rem;
 }
 
 .form {
@@ -95,7 +106,7 @@ input {
   margin-top: 2rem;
   width: 35rem;
   justify-content: space-around;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: rgb(98, 114, 70);
   margin: 2rem 0;
 }
@@ -110,7 +121,7 @@ input {
   color: #e9a513b2;
 }
 
-.bottons {
+.buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,34 +129,42 @@ input {
   margin-top: 1.5rem;
 }
 
-.bottonShow {
+.buttonShow {
   background-color: rgb(231, 159, 111);
   color: whitesmoke;
   border: 0;
   border-radius: 0.5rem;
+  height: 3rem;
+}
+
+.buttonShow:hover {
+  background-color: rgb(240, 141, 75);
 }
 
 .btnSend {
-  border: 0;
   border-radius: 0.5rem;
-  background-color: wheat;
-  color: black;
-  height: 2.5rem;
+  color: white;
+  border: none;
+  height: 3rem;
+  padding: 0 1rem;
+  background-color: rgb(44, 145, 44);
 }
 
 .btnSend:hover {
-  color: green;
+  background-color: rgb(8, 223, 8);
 }
 
-.delete {
-  height: 2.5rem;
-  border: 0;
+.btnReset {
+  border: none;
   border-radius: 0.5rem;
   color: black;
-  background-color: wheat;
   margin-left: 2.5rem;
+  height: 3rem;
+  padding: 0 1rem;
+  color: white;
+  background-color: rgb(247, 70, 70);
 }
 
-.delete:hover {
-  color: rgb(187, 9, 9);
+.btnReset:hover {
+  background-color: rgb(187, 9, 9);
 }

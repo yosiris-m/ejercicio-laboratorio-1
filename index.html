@@ -20,7 +20,7 @@
       <form class=".js-form form" id="form" action="send">
         <fieldset>
           <legend class="legend">
-            Datos Personales <i class="fas fa-user"></i>
+            <i class="fas fa-user"></i> Datos Personales
           </legend>
           <section class="personalData">
             <label for="name">Nombre:</label>
@@ -58,7 +58,7 @@
 
         <fieldset class="type">
           <legend class="legend">
-            Tipo de Contratación <i class="fas fa-phone-alt"></i>
+            <i class="fas fa-phone-alt"></i> Tipo de Contratación
           </legend>
           <label for="new"
             ><input type="radio" value="new" name="contraction" checked />Nueva
@@ -101,7 +101,7 @@
 
         <fieldset class="dataBank">
           <legend class="legend">
-            Datos Bancarios <i class="fas fa-money-check-alt"></i>
+            <i class="fas fa-money-check-alt"></i> Datos Bancarios
           </legend>
 
           <label for="es"
@@ -179,8 +179,8 @@
 
         <fieldset class="poll">
           <legend class="legend">
-            Datos Estadisticos - ¿Cómo nos conoció?
             <i class="fas fa-headset"></i>
+            Datos Estadisticos - ¿Cómo nos conoció?
           </legend>
           <label for="new"><input type="checkbox" />A través de la TV</label>
           <label for="new"><input type="checkbox" />A través de la radio</label>
@@ -200,7 +200,7 @@
           </label>
 
           <div class="pollStar">
-            <div class="star" onclick="valueStar(event)">
+            <div class="star" onclick="handleStarClick(event)">
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
@@ -210,24 +210,24 @@
             <span class="span">Danos tu valoración[1-5]</span>
           </div>
         </fieldset>
-        <section class="bottons">
+        <section class="buttons">
           <div class="otherBotton">
             <input
               type="button"
               value="Mostrar Valoración"
-              class="bottonShow"
+              class="buttonShow"
               onclick="reviewStars()"
             />
             <input
               type="button"
               value="Mostrar Cuenta"
-              class="bottonShow"
+              class="buttonShow"
               onclick="showBank()"
             />
             <input
               type="button"
               value="Mostrar Día Semana"
-              class="bottonShow"
+              class="buttonShow"
               onclick="showDate()"
             />
           </div>
@@ -242,7 +242,7 @@
             <input
               type="reset"
               value="Borrar Datos"
-              class="delete"
+              class="btnReset"
               onclick="onClickHandleDelete()"
             />
           </div>

@@ -12,7 +12,7 @@ form.addEventListener("submit", handleSubmit);
 function onClickHandleDelete() {
   document.querySelector("#form").reset();
   valueSpan.innerText = "";
-  valueStar("");
+  changeReview(0);
 }
 
 function validPostalCode(postalCode) {
@@ -63,13 +63,18 @@ inputText.addEventListener("keyup", inputNumberOnChange);
 const stars = [...document.querySelectorAll(".fa-star")];
 
 let review = 0;
-function valueStar(ev) {
+
+function handleStarClick(ev) {
   const index = stars.indexOf(ev.target);
-  review = index + 1;
+  changeReview(index + 1);
+}
+
+function changeReview(newReview) {
+  review = newReview;
   for (let i = 0; i < stars.length; i++) {
     const element = stars[i];
 
-    if (i <= index) {
+    if (i <= review - 1) {
       element.classList.add("starActive");
       element.classList.add("fas");
       element.classList.remove("far");
