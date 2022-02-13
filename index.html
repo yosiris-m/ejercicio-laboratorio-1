@@ -70,26 +70,26 @@
                         <legend class="legend">Datos Bancarios <i class="fas fa-money-check-alt"></i></legend>
                       
                         <label for="es">País:
-                            <input type="text"  value="ES" id="es" placeholder="ES" maxlength="2" pattern="[ES]{1,2}" disabled>
+                            <input type="text" name="country" id="country" value="ES" readonly>
                             <span class="digit"> (sólo válido ES)</span>
                          </label>
                           
-                        <label for="bankName" >Control IBAN<input type="number" name="bankName" id="bankName" placeholder="XX" min="0" max="99">
+                        <label for="bankName" >Control IBAN<input type="text" name="bankName" id="bankName" placeholder="XX" maxlength="2" onkeyup="removeNoNumbers(event)">
                             <span class="digit">(dos dígitos)</span></label>
                         <label for="direction">Entidad:
-                          <input type="number" name="direction" id="direction" placeholder="XXXX">
+                          <input type="text" name="direction" id="direction" placeholder="XXXX" maxlength="4" onkeyup="removeNoNumbers(event)">
                            <span class="digit">(cuatro digitos) </span>   
                             </label>
                         <label for="codeBank">Sucursal:
-                         <input type="number" name="codeBank" id="codeBank" placeholder="XXXX">
+                         <input type="text" name="codeBank" id="codeBank" placeholder="XXXX" maxlength="4" onkeyup="removeNoNumbers(event)">
                          <span class="digit"> (cuatro dígitos)</span>
                         </label>
                         <label for="dc">DC: 
-                        <input type="number" name="dc" id="dc" placeholder="XX"maxlength="2">
+                        <input type="text" name="dc" id="dc" placeholder="XX" maxlength="2" onkeyup="removeNoNumbers(event)">
                         <span class="digit">(dos dígitos)</span>
                        </label>
                         <label for="numberBank">Cuenta: 
-                         <input type="number" name="numberBank" id="numberBank" placeholder="XXXXXXXXXX">
+                         <input type="text" name="numberBank" id="numberBank" placeholder="XXXXXXXXXX" maxlength="10" onkeyup="removeNoNumbers(event)">
                         <span class="digit">(diez dígitos)</span>
                         </label>
                     

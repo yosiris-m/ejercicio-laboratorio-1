@@ -85,8 +85,13 @@ function reviewStars() {
   alert(`Has valorado con ${review} puntos`);
 }
 
+function removeNoNumbers(ev) {
+  const input = ev.target;
+  input.value = input.value.replace(/[^0-9]/g, "");
+}
+
 function showBank() {
-  const es = document.getElementById("es");
+  const country = document.getElementById("country");
   const bankName = document.getElementById("bankName");
   const direction = document.getElementById("direction");
   const codeBank = document.getElementById("codeBank");
@@ -94,7 +99,7 @@ function showBank() {
   const numberBank = document.getElementById("numberBank");
 
   alert(
-    `Le informamos que su cuenta bancaria es: ${es.value}${bankName.value}-
+    `Le informamos que su cuenta bancaria es: ${country.value}${bankName.value}-
      ${direction.value}-${codeBank.value}-${dc.value}-${numberBank.value}`
   );
 }
