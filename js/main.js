@@ -40,10 +40,10 @@ function validPostalCode(postalCode) {
   };
 }
 
-const inputText = document.getElementById("inputText");
+const postalInput = document.getElementById("postalInput");
 const postalValidation = document.getElementById("postalValidation");
 
-function inputNumberOnChange(ev) {
+function postalInputOnKeyUp(ev) {
   const inputV = ev.target.value;
   const valid = validPostalCode(inputV);
 
@@ -58,7 +58,7 @@ function inputNumberOnChange(ev) {
   }
 }
 
-inputText.addEventListener("keyup", inputNumberOnChange);
+postalInput.addEventListener("keyup", postalInputOnKeyUp);
 
 const stars = [...document.querySelectorAll(".fa-star")];
 
