@@ -15,15 +15,41 @@ function onClickHandleDelete() {
   changeReview(0);
 }
 
-function validPostalCode(postalCode) {
+function validStateAndPostalCode(postalCode, state) {
+  if (state === "") {
+    return { isValid: false, mensaje: "La provincia está vacía" };
+  }
+  if (/[0-9]/.test(state)) {
+    return {
+      isValid: false,
+      mensaje: "La provincia no puede contener números",
+    };
+  }
+  let found = postalCodes.find(
+    (item) => item.name.toLowerCase() === state.toLowerCase()
+  );
+  if (!found) {
+    return {
+      isValid: false,
+      mensaje:
+        "La nombre de provicia introducida es erróneo y no corresponde a ninguna provincia",
+    };
+  }
+
   if (postalCode === "") {
     return { isValid: false, mensaje: "El código postal está vacío" };
   }
   if (isNaN(postalCode)) {
-    return { isValid: false, mensaje: "Solo puede contener números" };
+    return {
+      isValid: false,
+      mensaje: "El código postal solo puede contener números",
+    };
   }
   if (postalCode.length != 5) {
-    return { isValid: false, mensaje: "El campo debe contener 5 números" };
+    return {
+      isValid: false,
+      mensaje: "El código postal debe contener 5 números",
+    };
   }
   let code = postalCode.substring(0, 2);
   let codeFound = postalCodes.find((item) => item.id === code);
@@ -34,18 +60,27 @@ function validPostalCode(postalCode) {
     };
   }
 
+  if (state.toLowerCase() !== codeFound.name.toLowerCase()) {
+    return {
+      isValid: false,
+      mensaje: `Código postal pertenece a ${codeFound.name} y no coincide con la provincia introducida`,
+    };
+  }
+
   return {
     isValid: true,
-    mensaje: `Código postal válido, corresponde a la provincia de ${codeFound.name}`,
+    mensaje: `La provincia y el código postal son válidos`,
   };
 }
 
 const postalInput = document.getElementById("postalInput");
+const stateInput = document.getElementById("stateInput");
 const postalValidation = document.getElementById("postalValidation");
 
-function postalInputOnKeyUp(ev) {
-  const inputV = ev.target.value;
-  const valid = validPostalCode(inputV);
+function stateAndPostalCodeOnKeyUp() {
+  const postalCode = postalInput.value;
+  const state = stateInput.value;
+  const valid = validStateAndPostalCode(postalCode, state);
 
   postalValidation.innerText = valid.mensaje;
 
@@ -58,7 +93,8 @@ function postalInputOnKeyUp(ev) {
   }
 }
 
-postalInput.addEventListener("keyup", postalInputOnKeyUp);
+postalInput.addEventListener("keyup", stateAndPostalCodeOnKeyUp);
+stateInput.addEventListener("keyup", stateAndPostalCodeOnKeyUp);
 
 const stars = [...document.querySelectorAll(".fa-star")];
 
